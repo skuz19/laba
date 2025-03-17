@@ -67,10 +67,7 @@ int main() {
                 if (a <= 0 || b <= 0) {
                     cout << "Ошибка: длины оснований должны быть больше 0." << endl << endl;
                     break;
-                }
-                if ((a + b + c <= d) || (a + b + d <= c) || (a + c + d <= b) || (b + c + d <= a)) {
-                    cout << "Ошибка: трапеция не существует." << endl << endl;
-                    break;
+                
                 }
                 cout << "Средняя линия: " << srl(a, b) << endl << endl;
                 break;
