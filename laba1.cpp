@@ -5,7 +5,7 @@ using namespace std;
 double p(double a, double b, double c, double d) {
     return a + b + c + d;
 }
-
+//123
 double s(double a, double b, double h) {
     return ((a + b) * h) / 2;
 }
