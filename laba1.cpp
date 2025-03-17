@@ -1,8 +1,3 @@
-
-  
-  
-  
-  
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -37,20 +32,32 @@ int main() {
             case 1:
                 cout << "Основания и боковые стороны: " << endl;
                 cin >> a >> b >> c >> d;
-                if (a <= 0 || b <= 0 ||  c <= 0 || d <= 0) {
+                if (a <= 0 || b <= 0 || c <= 0 || d <= 0) {
                     cout << "Ошибка: длины сторон должны быть больше 0." << endl << endl;
                     break;
                 }
+                
+                if ((a + b + c <= d) || (a + b + d <= c) || (a + c + d <= b) || (b + c + d <= a)) {
+                    cout << "Ошибка: трапеция не существует." << endl << endl;
+                    break;
+                }
+
                 cout << "Периметр: " << p(a, b, c, d) << endl << endl;
                 break;
 
             case 2:
                 cout << "Длины оснований и высота: " << endl;
                 cin >> a >> b >> h;
-                if (a <= 0 ||  b <= 0 || h <= 0) {
+                if (a <= 0 || b <= 0 ||  h <= 0) {
                     cout << "Ошибка: длины оснований и высота должны быть больше 0." << endl << endl;
                     break;
                 }
+
+                if ((a + b + c <= d) || (a + b + d <= c) || (a + c + d <= b) || (b + c + d <= a)) {
+                    cout << "Ошибка: трапеция не существует." << endl << endl;
+                    break;
+                }
+
                 cout << "Площадь: " << s(a, b, h) << endl << endl;
                 break;
 
@@ -59,6 +66,10 @@ int main() {
                 cin >> a >> b;
                 if (a <= 0 || b <= 0) {
                     cout << "Ошибка: длины оснований должны быть больше 0." << endl << endl;
+                    break;
+                }
+                if ((a + b + c <= d) || (a + b + d <= c) || (a + c + d <= b) || (b + c + d <= a)) {
+                    cout << "Ошибка: трапеция не существует." << endl << endl;
                     break;
                 }
                 cout << "Средняя линия: " << srl(a, b) << endl << endl;
