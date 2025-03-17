@@ -1,3 +1,8 @@
+
+  
+  
+  
+  
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -32,18 +37,30 @@ int main() {
             case 1:
                 cout << "Основания и боковые стороны: " << endl;
                 cin >> a >> b >> c >> d;
+                if (a <= 0  b <= 0  c <= 0 || d <= 0) {
+                    cout << "Ошибка: длины сторон должны быть больше 0." << endl << endl;
+                    break;
+                }
                 cout << "Периметр: " << p(a, b, c, d) << endl << endl;
                 break;
 
             case 2:
                 cout << "Длины оснований и высота: " << endl;
                 cin >> a >> b >> h;
+                if (a <= 0  b <= 0  h <= 0) {
+                    cout << "Ошибка: длины оснований и высота должны быть больше 0." << endl << endl;
+                    break;
+                }
                 cout << "Площадь: " << s(a, b, h) << endl << endl;
                 break;
 
             case 3:
                 cout << "Длины оснований: " << endl;
                 cin >> a >> b;
+                if (a <= 0 || b <= 0) {
+                    cout << "Ошибка: длины оснований должны быть больше 0." << endl << endl;
+                    break;
+                }
                 cout << "Средняя линия: " << srl(a, b) << endl << endl;
                 break;
 
@@ -52,7 +69,7 @@ int main() {
                 break;
 
             default:
-                cout << "Ошибка" << endl;
+                cout << "Ошибка: выберите пункт от 1 до 4." << endl;
                 break;
         }
     }
